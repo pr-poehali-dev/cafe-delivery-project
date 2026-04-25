@@ -18,17 +18,25 @@ interface CartItem extends MenuItem {
 }
 
 const MENU: MenuItem[] = [
-  { id: 1, name: 'Авторский бургер', description: 'Сочная котлета, карамелизованный лук, трюфельный соус', price: 490, emoji: '🍔', category: 'Горячее', badge: 'ХИТ' },
-  { id: 2, name: 'Паста карбонара', description: 'Классика итальянской кухни с беконом и пармезаном', price: 420, emoji: '🍝', category: 'Горячее' },
-  { id: 3, name: 'Боул с лососем', description: 'Рис, авокадо, огурец, маринованный имбирь', price: 560, emoji: '🥗', category: 'Здоровое', badge: 'НОВИНКА' },
-  { id: 4, name: 'Том ям', description: 'Острый тайский суп с кокосовым молоком и креветками', price: 480, emoji: '🍜', category: 'Супы' },
-  { id: 5, name: 'Тартар из тунца', description: 'Свежий тунец, кунжутное масло, соус понзу', price: 650, emoji: '🐟', category: 'Закуски' },
-  { id: 6, name: 'Трюфельные фри', description: 'Хрустящий картофель с трюфельным маслом и пармезаном', price: 290, emoji: '🍟', category: 'Закуски' },
-  { id: 7, name: 'Чизкейк Нью-Йорк', description: 'Нежный, сливочный, с ягодным компотом', price: 320, emoji: '🍰', category: 'Десерты' },
-  { id: 8, name: 'Флэт уайт', description: 'Двойной эспрессо с бархатистым молоком', price: 220, emoji: '☕', category: 'Напитки', badge: 'АВТОРСКИЙ' },
+  { id: 1, name: 'Маргарита', description: 'Томатный соус, моцарелла, свежий базилик', price: 490, emoji: '🍕', category: 'Пицца', badge: 'ХИТ' },
+  { id: 2, name: 'Пепперони', description: 'Острая салями, моцарелла, томатный соус', price: 540, emoji: '🍕', category: 'Пицца' },
+  { id: 3, name: 'Куриная отбивная', description: 'Филе в панировке, картофельное пюре, соус', price: 420, emoji: '🍗', category: 'Горячие', badge: 'НОВИНКА' },
+  { id: 4, name: 'Стейк из свинины', description: 'Сочный стейк с грилем, розмарин, тимьян', price: 580, emoji: '🥩', category: 'Горячие' },
+  { id: 5, name: 'Брускетта', description: 'Хрустящий хлеб, томаты, базилик, оливковое масло', price: 220, emoji: '🥖', category: 'Закуски' },
+  { id: 6, name: 'Крылья буффало', description: 'Острые куриные крылья, соус ранч', price: 310, emoji: '🍗', category: 'Закуски' },
+  { id: 7, name: 'Греческий салат', description: 'Огурец, томат, фета, оливки, орегано', price: 290, emoji: '🥗', category: 'Салаты' },
+  { id: 8, name: 'Цезарь с курицей', description: 'Романо, куриное филе, пармезан, сухарики', price: 340, emoji: '🥗', category: 'Салаты' },
+  { id: 9, name: 'Том ям', description: 'Острый тайский суп с кокосом и креветками', price: 480, emoji: '🍜', category: 'Супы' },
+  { id: 10, name: 'Борщ домашний', description: 'По классическому рецепту, со сметаной', price: 280, emoji: '🍲', category: 'Супы' },
+  { id: 11, name: 'Лимонад', description: 'Свежий лимон, мята, газированная вода', price: 180, emoji: '🍋', category: 'Напитки' },
+  { id: 12, name: 'Флэт уайт', description: 'Двойной эспрессо с бархатистым молоком', price: 220, emoji: '☕', category: 'Напитки', badge: 'АВТОРСКИЙ' },
+  { id: 13, name: 'Чизкейк Нью-Йорк', description: 'Нежный, сливочный, с ягодным компотом', price: 320, emoji: '🍰', category: 'Десерты' },
+  { id: 14, name: 'Тирамису', description: 'Классический итальянский десерт с маскарпоне', price: 290, emoji: '🍮', category: 'Десерты' },
+  { id: 15, name: 'Картофель фри', description: 'Хрустящий, с соусом на выбор', price: 180, emoji: '🍟', category: 'Гарниры' },
+  { id: 16, name: 'Рис с овощами', description: 'Пропаренный рис, сезонные овощи, зелень', price: 160, emoji: '🍚', category: 'Гарниры' },
 ];
 
-const CATEGORIES = ['Все', 'Горячее', 'Закуски', 'Супы', 'Здоровое', 'Десерты', 'Напитки'];
+const CATEGORIES = ['Все', 'Пицца', 'Горячие', 'Закуски', 'Салаты', 'Супы', 'Напитки', 'Десерты', 'Гарниры'];
 
 const NAV_LINKS = [
   { label: 'Главная', href: '#hero' },
