@@ -103,7 +103,7 @@ const Index = () => {
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4">
         <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div className="glass rounded-full px-6 py-2 flex items-center gap-8">
-            <span className="font-display text-xl font-bold tracking-widest text-gradient">КАФЕ</span>
+            <span className="font-display text-xl font-bold tracking-widest text-gradient">ПИЦЦА</span>
             <div className="hidden md:flex items-center gap-6">
               {NAV_LINKS.map(link => (
                 <a
@@ -395,7 +395,7 @@ const Index = () => {
       {/* FOOTER */}
       <footer className="border-t border-white/5 py-8 px-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <span className="font-display text-2xl font-bold text-gradient tracking-widest">КАФЕ</span>
+          <span className="font-display text-2xl font-bold text-gradient tracking-widest">ПИЦЦА</span>
           <p className="font-rubik text-xs text-white/30">© 2025 Кафе «Вкус без границ». Все права защищены.</p>
           <div className="flex gap-4">
             {NAV_LINKS.map(link => (
