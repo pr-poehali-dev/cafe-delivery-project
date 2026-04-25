@@ -151,9 +151,7 @@ const Index = () => {
           </div>
 
           <h1 className="font-display text-6xl md:text-8xl font-bold uppercase leading-none mb-6">
-            Вкус без
-            <br />
-            <span className="text-gradient">границ</span>
+            <span className="text-gradient">ПИЦЦА</span>
           </h1>
 
           <p className="font-rubik text-white/60 text-lg md:text-xl mb-10 max-w-xl mx-auto">
