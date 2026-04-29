@@ -302,7 +302,16 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-cafe-dark text-white overflow-x-hidden">
+    <div
+      className="min-h-screen text-white overflow-x-hidden"
+      style={{
+        backgroundImage: 'url(https://cdn.poehali.dev/projects/065d3492-188e-4a88-aec6-8f5d0527832f/bucket/977de0e3-ebbf-4f1c-976c-ab51c29749c2.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center top',
+        backgroundAttachment: 'fixed',
+      }}
+    >
+    <div className="min-h-screen overflow-x-hidden" style={{ background: 'rgba(10,6,2,0.82)' }}>
 
       {/* NAVBAR */}
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4">
@@ -703,6 +712,7 @@ const Index = () => {
           <span className="font-display tracking-wide">{totalItems} — {totalPrice} ₽</span>
         </button>
       )}
+    </div>
     </div>
   );
 };
