@@ -462,12 +462,13 @@ const Index = () => {
             Открыто до 23:00 • Доставка от 30 минут
           </div>
 
-          <h1 className="font-display text-6xl md:text-8xl font-bold uppercase leading-none mb-6">
-            <span className="text-gradient">ПИЦЦА</span>
+          <h1 className="font-display text-5xl md:text-7xl font-bold uppercase leading-tight mb-4">
+            <span className="text-gradient">ПИЦЦА</span><br />
+            <span className="text-white">НА ПЕРВОМАЙСКОЙ 78</span>
           </h1>
 
-          <p className="font-rubik text-white/60 text-lg md:text-xl mb-10 max-w-xl mx-auto">
-            Авторская кухня, свежие продукты и быстрая доставка прямо к вашей двери
+          <p className="font-rubik text-white/60 text-base md:text-lg mb-10 max-w-xl mx-auto">
+            Самая вкусная пицца по низкой цене
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
