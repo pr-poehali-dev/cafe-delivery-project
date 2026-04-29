@@ -516,12 +516,12 @@ const Index = () => {
             <h2 className="font-display text-5xl font-bold uppercase mt-2">Что приготовить<br /><span className="text-gradient">для вас?</span></h2>
           </div>
 
-          <div className="flex gap-3 mb-10 overflow-x-auto scrollbar-hide pb-2">
+          <div className="flex flex-wrap gap-2 mb-10">
             {CATEGORIES.map(cat => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`flex-shrink-0 px-5 py-2 rounded-full font-display text-sm tracking-wide uppercase transition-all duration-200 ${
+                className={`px-4 py-2 rounded-full font-display text-sm tracking-wide uppercase transition-all duration-200 ${
                   activeCategory === cat
                     ? 'btn-neon'
                     : 'glass text-white/60 hover:text-white hover:border-white/20'
