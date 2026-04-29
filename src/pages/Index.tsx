@@ -18,8 +18,10 @@ interface CartItem extends MenuItem {
 }
 
 const MENU: MenuItem[] = [
-  { id: 1, name: 'Маргарита', description: 'Томатный соус, моцарелла, свежий базилик', price: 490, emoji: '🍕', category: 'Пицца', badge: 'ХИТ' },
-  { id: 2, name: 'Пепперони', description: 'Острая салями, моцарелла, томатный соус', price: 540, emoji: '🍕', category: 'Пицца' },
+  { id: 1, name: 'Маргарита', description: 'Томатный соус, моцарелла, свежий базилик', price: 490, emoji: '🍕', category: 'Пицца большая', badge: 'ХИТ' },
+  { id: 2, name: 'Пепперони', description: 'Острая салями, моцарелла, томатный соус', price: 540, emoji: '🍕', category: 'Пицца большая' },
+  { id: 17, name: 'Маргарита мини', description: 'Томатный соус, моцарелла, свежий базилик', price: 290, emoji: '🍕', category: 'Пицца маленькая' },
+  { id: 18, name: 'Пепперони мини', description: 'Острая салями, моцарелла, томатный соус', price: 320, emoji: '🍕', category: 'Пицца маленькая' },
   { id: 3, name: 'Куриная отбивная', description: 'Филе в панировке, картофельное пюре, соус', price: 420, emoji: '🍗', category: 'Горячие', badge: 'НОВИНКА' },
   { id: 4, name: 'Стейк из свинины', description: 'Сочный стейк с грилем, розмарин, тимьян', price: 580, emoji: '🥩', category: 'Горячие' },
   { id: 5, name: 'Брускетта', description: 'Хрустящий хлеб, томаты, базилик, оливковое масло', price: 220, emoji: '🥖', category: 'Закуски' },
@@ -37,6 +39,7 @@ const MENU: MenuItem[] = [
 ];
 
 const CATEGORIES = ['Все', 'Пицца', 'Горячие', 'Закуски', 'Салаты', 'Супы', 'Напитки', 'Десерты', 'Гарниры'];
+const PIZZA_SUBCATEGORIES = ['Пицца большая', 'Пицца маленькая'];
 
 const NAV_LINKS = [
   { label: 'Главная', href: '#hero' },
@@ -83,7 +86,9 @@ const Index = () => {
 
   const filteredMenu = activeCategory === 'Все'
     ? MENU
-    : MENU.filter(item => item.category === activeCategory);
+    : activeCategory === 'Пицца'
+      ? MENU.filter(item => PIZZA_SUBCATEGORIES.includes(item.category))
+      : MENU.filter(item => item.category === activeCategory);
 
   const handleOrder = (e: React.FormEvent) => {
     e.preventDefault();
@@ -220,6 +225,63 @@ const Index = () => {
             ))}
           </div>
 
+          {activeCategory === 'Пицца' ? (
+            PIZZA_SUBCATEGORIES.map(sub => {
+              const subItems = filteredMenu.filter(item => item.category === sub);
+              const label = sub === 'Пицца большая' ? 'Большая' : 'Маленькая';
+              return (
+                <div key={sub} className="mb-10">
+                  <div className="flex items-center gap-4 mb-6">
+                    <span className="font-display text-2xl font-bold uppercase tracking-wide">{label}</span>
+                    <div className="flex-1 h-px bg-white/10" />
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    {subItems.map((item, i) => {
+                      const inCart = cart.find(c => c.id === item.id);
+                      return (
+                        <div
+                          key={item.id}
+                          className="card-dish rounded-2xl overflow-hidden"
+                          style={{ animation: menuVisible ? `fade-up 0.5s ease-out ${i * 0.05}s both` : 'none' }}
+                        >
+                          <div className="relative bg-gradient-to-br from-white/5 to-white/0 h-36 flex items-center justify-center text-6xl">
+                            {item.emoji}
+                            {item.badge && (
+                              <span className="absolute top-3 right-3 bg-[var(--neon-orange)] text-white text-[10px] font-display tracking-wider px-2 py-0.5 rounded-full">
+                                {item.badge}
+                              </span>
+                            )}
+                          </div>
+                          <div className="p-4">
+                            <div className="font-display text-base font-semibold uppercase tracking-wide mb-1">{item.name}</div>
+                            <div className="font-rubik text-xs text-white/40 mb-4 leading-relaxed">{item.description}</div>
+                            <div className="flex items-center justify-between">
+                              <span className="font-display text-lg font-bold text-[var(--neon-orange)]">{item.price} ₽</span>
+                              {inCart ? (
+                                <div className="flex items-center gap-2">
+                                  <button onClick={() => removeFromCart(item.id)} className="w-7 h-7 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors">
+                                    <Icon name="Minus" size={12} />
+                                  </button>
+                                  <span className="font-display text-sm w-4 text-center">{inCart.quantity}</span>
+                                  <button onClick={() => addToCart(item)} className="w-7 h-7 rounded-full bg-[var(--neon-orange)] flex items-center justify-center hover:bg-[var(--neon-orange)]/80 transition-colors">
+                                    <Icon name="Plus" size={12} />
+                                  </button>
+                                </div>
+                              ) : (
+                                <button onClick={() => addToCart(item)} className="w-8 h-8 rounded-full btn-neon flex items-center justify-center">
+                                  <Icon name="Plus" size={14} />
+                                </button>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })
+          ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {filteredMenu.map((item, i) => {
               const inCart = cart.find(c => c.id === item.id);
@@ -272,6 +334,7 @@ const Index = () => {
               );
             })}
           </div>
+          )}
         </div>
       </section>
 
