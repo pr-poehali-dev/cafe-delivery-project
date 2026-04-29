@@ -8,6 +8,8 @@ interface MenuItem {
   name: string;
   description: string;
   price: number;
+  priceAlt?: string;
+  weight?: string;
   emoji: string;
   category: string;
   badge?: string;
@@ -58,9 +60,136 @@ const MENU: MenuItem[] = [
   { id: 14, name: 'Тирамису', description: 'Классический итальянский десерт с маскарпоне', price: 290, emoji: '🍮', category: 'Десерты' },
   { id: 15, name: 'Картофель фри', description: 'Хрустящий, с соусом на выбор', price: 180, emoji: '🍟', category: 'Гарниры' },
   { id: 16, name: 'Рис с овощами', description: 'Пропаренный рис, сезонные овощи, зелень', price: 160, emoji: '🍚', category: 'Гарниры' },
+
+  // Десерты
+  { id: 50, name: 'Санди', description: 'мороженое, киви, банан, шоколад, грецкий орех', price: 220, weight: '165 г', emoji: '🍨', category: 'Десерты' },
+  { id: 51, name: 'Банановые облачка', description: 'тёплый десерт с клубничным сиропом', price: 170, weight: '165 г', emoji: '🍌', category: 'Десерты' },
+  { id: 52, name: 'Блинчики по-карибски', description: 'ананас, мороженое, клубничный сироп', price: 190, weight: '250 г', emoji: '🥞', category: 'Десерты' },
+  { id: 53, name: 'Блинчики с шоколадом', description: '', price: 190, weight: '150/30/30 г', emoji: '🥞', category: 'Десерты' },
+  { id: 54, name: 'Блинчики с фруктами', description: '', price: 190, weight: '150/20 г', emoji: '🥞', category: 'Десерты' },
+  { id: 55, name: 'Шоколадная плитка', description: '', price: 140, weight: '1 шт', emoji: '🍫', category: 'Десерты' },
+  { id: 56, name: 'Пирожное Йогуртовое', description: '', price: 220, weight: '110 г', emoji: '🍰', category: 'Десерты' },
+  { id: 57, name: 'Пирожное Творожное', description: '', price: 220, weight: '140 г', emoji: '🍰', category: 'Десерты' },
+  { id: 58, name: 'Пирожное Банановое', description: '', price: 220, weight: '130 г', emoji: '🍰', category: 'Десерты' },
+  { id: 59, name: 'Пирожное Шоколадный мусс', description: '', price: 220, weight: '110 г', emoji: '🍰', category: 'Десерты' },
+
+  // Мороженое
+  { id: 60, name: 'Пломбир с сиропом', description: 'шоколад, карамель, лесная ягода, ананас, клубника, малина, вишня', price: 260, weight: '100/25 г', emoji: '🍦', category: 'Мороженое' },
+  { id: 61, name: 'Пломбир вкусовой', description: 'ванильный, шоколад, фисташка, чёрная смородина, клубника', price: 210, weight: '100 г', emoji: '🍦', category: 'Мороженое' },
+
+  // Наполнители
+  { id: 70, name: 'Персик консервированный', description: '', price: 50, weight: '20 г', emoji: '🍑', category: 'Наполнители' },
+  { id: 71, name: 'Ананас консервированный', description: '', price: 50, weight: '20 г', emoji: '🍍', category: 'Наполнители' },
+  { id: 72, name: 'Грецкий орех', description: '', price: 50, weight: '20 г', emoji: '🌰', category: 'Наполнители' },
+  { id: 73, name: 'Банан', description: '', price: 50, weight: '20 г', emoji: '🍌', category: 'Наполнители' },
+  { id: 74, name: 'Апельсин', description: '', price: 50, weight: '20 г', emoji: '🍊', category: 'Наполнители' },
+  { id: 75, name: 'Киви', description: '', price: 50, weight: '20 г', emoji: '🥝', category: 'Наполнители' },
+  { id: 76, name: 'Шоколад', description: '', price: 50, weight: '10 г', emoji: '🍫', category: 'Наполнители' },
+
+  // Молочно-фруктовые коктейли
+  { id: 80, name: 'Коктейль Киви', description: '', price: 230, weight: '250 мл', emoji: '🥤', category: 'Коктейли' },
+  { id: 81, name: 'Коктейль Клубничный', description: '', price: 230, weight: '250 мл', emoji: '🥤', category: 'Коктейли' },
+  { id: 82, name: 'Коктейль Банановый', description: '', price: 230, weight: '250 мл', emoji: '🥤', category: 'Коктейли' },
+
+  // Горячие напитки
+  { id: 90, name: 'Эспрессо', description: '', price: 80, weight: '50 мл', emoji: '☕', category: 'Горячие напитки' },
+  { id: 91, name: 'Двойной эспрессо', description: '', price: 110, weight: '150 мл', emoji: '☕', category: 'Горячие напитки' },
+  { id: 92, name: 'Американо', description: '', price: 110, weight: '150 мл', emoji: '☕', category: 'Горячие напитки' },
+  { id: 93, name: 'Макиато', description: '', price: 90, weight: '50 мл', emoji: '☕', category: 'Горячие напитки' },
+  { id: 94, name: 'Капучино', description: '', price: 140, weight: '150 мл', emoji: '☕', category: 'Горячие напитки' },
+  { id: 95, name: 'Латте', description: '', price: 140, weight: '250 мл', emoji: '☕', category: 'Горячие напитки' },
+  { id: 96, name: 'Латте с сиропом', description: 'шоколад, клубника, вишня', price: 150, weight: '250 мл', emoji: '☕', category: 'Горячие напитки' },
+  { id: 97, name: 'Гляссе с шариком мороженого', description: '', price: 120, weight: '150 мл', emoji: '☕', category: 'Горячие напитки' },
+  { id: 98, name: 'Чай пакетированный с сахаром и лимоном', description: 'в ассортименте', price: 50, weight: '200/15/7 г', emoji: '🍵', category: 'Горячие напитки' },
+  { id: 99, name: 'Чай чёрный в чайнике с лимоном', description: 'в ассортименте', price: 100, weight: '450/15/5 г', emoji: '🍵', category: 'Горячие напитки' },
+  { id: 100, name: 'Чай зелёный в чайнике с лимоном', description: 'в ассортименте', price: 100, weight: '450/15/5 г', emoji: '🍵', category: 'Горячие напитки' },
+
+  // Напитки
+  { id: 110, name: 'Сок в ассортименте', description: 'томат, грейпфрут, манго, персик, апельсин, яблоко, ананас, вишня, мультифрукт, виноград', price: 70, priceAlt: '350 ₽ / 1 л', weight: '0,2 л', emoji: '🧃', category: 'Напитки' },
+  { id: 111, name: 'Свежевыжатые соки', description: 'апельсин/грейпфрут', price: 200, priceAlt: '250 ₽ / 0,4 л', weight: '0,2 л', emoji: '🍊', category: 'Напитки' },
+  { id: 112, name: 'Лимонад Россия в ассортименте', description: '', price: 100, weight: '0,5 л', emoji: '🥤', category: 'Напитки' },
+  { id: 113, name: 'Черноголовка Лимонад', description: 'стекло', price: 120, weight: '0,5 л', emoji: '🥤', category: 'Напитки' },
+  { id: 114, name: 'Напиток газированный', description: 'розлив', price: 45, priceAlt: '90 ₽ / 0,5 л', weight: '0,25 л', emoji: '🥤', category: 'Напитки' },
+  { id: 115, name: 'Черноголовка Кока-Кола', description: 'стекло', price: 200, weight: '0,5 л', emoji: '🥤', category: 'Напитки' },
+  { id: 116, name: 'Черноголовка Кока-Кола', description: 'пэт', price: 140, weight: '0,5 л', emoji: '🥤', category: 'Напитки' },
+  { id: 117, name: 'Добрый Кола/Фанта/Спрайт', description: '', price: 200, priceAlt: '140 ₽ / 0,5 л', weight: '1 л', emoji: '🥤', category: 'Напитки' },
+  { id: 118, name: 'Добрый Кола/Фанта/Спрайт', description: '', price: 100, priceAlt: '50 ₽ / 0,25 л', weight: '0,33 л', emoji: '🥤', category: 'Напитки' },
+  { id: 119, name: 'Burn', description: '', price: 200, weight: '0,45 л', emoji: '⚡', category: 'Напитки' },
+  { id: 120, name: 'Липецкая минеральная вода', description: '', price: 60, weight: '0,5 л', emoji: '💧', category: 'Напитки' },
+  { id: 121, name: 'Бонаква', description: '', price: 100, weight: '0,5 л', emoji: '💧', category: 'Напитки' },
+
+  // Вина
+  { id: 130, name: 'Шампанское Абрау-Дюрсо', description: 'брют п/сл', price: 800, weight: '0,75 л', emoji: '🥂', category: 'Вина' },
+  { id: 131, name: 'Шампанское МКШВ', description: 'п/сл', price: 650, weight: '0,75 л', emoji: '🥂', category: 'Вина' },
+  { id: 132, name: 'Мускат', description: '', price: 800, priceAlt: '60 ₽ / бокал', weight: '0,75/0,05 л', emoji: '🍷', category: 'Вина' },
+  { id: 133, name: 'Гранде Momento', description: 'красное сухое и п/сл / белое сухое и п/сл (Россия)', price: 800, weight: '0,75 л', emoji: '🍷', category: 'Вина' },
+  { id: 134, name: 'Джой Тинто', description: 'красное сухое (Аргентина)', price: 1550, priceAlt: '75 ₽ / бокал', weight: '1,125/0,05 л', emoji: '🍷', category: 'Вина' },
+  { id: 135, name: 'Джой', description: 'белое сухое (Аргентина)', price: 1550, priceAlt: '75 ₽ / бокал', weight: '1,125/0,05 л', emoji: '🍷', category: 'Вина' },
+  { id: 136, name: 'Кастилья', description: 'белое сухое и п/сл / красное сухое и п/сл', price: 1350, priceAlt: '50 ₽ / бокал', weight: '1,5/0,05 л', emoji: '🍷', category: 'Вина' },
+
+  // Вина Грузии
+  { id: 140, name: 'Киндзмараули', description: 'красное п/сл', price: 1000, priceAlt: '70 ₽ / бокал', weight: '0,75/0,05 л', emoji: '🍷', category: 'Вина Грузии' },
+  { id: 141, name: 'Цинандали', description: 'белое сухое', price: 900, priceAlt: '60 ₽ / бокал', weight: '0,75/0,05 л', emoji: '🍷', category: 'Вина Грузии' },
+  { id: 142, name: 'Алазанская долина', description: 'красное п/сл и белое п/сл', price: 900, priceAlt: '60 ₽ / бокал', weight: '0,75/0,05 л', emoji: '🍷', category: 'Вина Грузии' },
+
+  // Пиво
+  { id: 150, name: 'Монастырское', description: 'светлое фильтрованное', price: 110, priceAlt: '150 ₽ / 0,5 л', weight: '0,33/0,5 л', emoji: '🍺', category: 'Пиво' },
+  { id: 151, name: 'Балтика 7', description: 'светлое фильтрованное', price: 100, priceAlt: '150 ₽ / 0,5 л', weight: '0,33/0,5 л', emoji: '🍺', category: 'Пиво' },
+  { id: 152, name: 'Стефанбланш', description: 'пшеничное н/ф', price: 110, priceAlt: '160 ₽ / 0,5 л', weight: '0,33/0,5 л', emoji: '🍺', category: 'Пиво' },
+  { id: 153, name: 'Крон Бланш Бир', description: 'пшеничное н/ф', price: 110, priceAlt: '170 ₽ / 0,5 л', weight: '0,33/0,5 л', emoji: '🍺', category: 'Пиво' },
+  { id: 154, name: 'Пилзнер Премиум', description: 'светлое фильтрованное', price: 110, priceAlt: '150 ₽ / 0,5 л', weight: '0,33/0,5 л', emoji: '🍺', category: 'Пиво' },
+  { id: 155, name: 'Балтика Портер', description: 'тёмное фильтрованное', price: 120, priceAlt: '170 ₽ / 0,5 л', weight: '0,33/0,5 л', emoji: '🍺', category: 'Пиво' },
+  { id: 156, name: 'Черри Найт', description: 'вишнёвое', price: 140, priceAlt: '190 ₽ / 0,5 л', weight: '0,33/0,5 л', emoji: '🍺', category: 'Пиво' },
+
+  // Фирменные настойки
+  { id: 160, name: 'Фирменные настойки в ассортименте', description: 'уточняйте на баре', price: 1500, priceAlt: '150 ₽ / 0,05 л', weight: '0,5/0,05 л', emoji: '🍶', category: 'Настойки' },
+
+  // Аперитивы
+  { id: 165, name: 'Мартини Бьянко', description: '', price: 3000, priceAlt: '150 ₽ / бокал', weight: '1 л/0,05 л', emoji: '🍸', category: 'Аперитивы' },
+  { id: 166, name: 'Мартини Драй', description: '', price: 3000, priceAlt: '150 ₽ / бокал', weight: '1 л/0,05 л', emoji: '🍸', category: 'Аперитивы' },
+  { id: 167, name: 'Мартини Россо', description: '', price: 3000, priceAlt: '150 ₽ / бокал', weight: '1 л/0,05 л', emoji: '🍸', category: 'Аперитивы' },
+
+  // Виски
+  { id: 170, name: 'Джемесон', description: '', price: 2700, priceAlt: '270 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Виски' },
+  { id: 171, name: 'Рэд Лэйбл', description: '', price: 1800, priceAlt: '180 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Виски' },
+  { id: 172, name: 'Баллантайнс', description: '', price: 2200, priceAlt: '220 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Виски' },
+  { id: 173, name: 'Джим Бим', description: '', price: 2200, priceAlt: '220 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Виски' },
+  { id: 174, name: 'Уильям Лоусонс', description: '', price: 1600, priceAlt: '160 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Виски' },
+
+  // Коньяк
+  { id: 180, name: 'Старейшина 7 звёзд', description: '', price: 1600, priceAlt: '160 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Коньяк' },
+  { id: 181, name: 'Коктебель 5 звёзд', description: '', price: 1600, priceAlt: '160 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Коньяк' },
+  { id: 182, name: 'Арарат 3 звезды', description: '', price: 1800, priceAlt: '180 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Коньяк' },
+  { id: 183, name: 'Арарат 5 звёзд', description: '', price: 2200, priceAlt: '220 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Коньяк' },
+  { id: 184, name: 'Великая династия 5 звёзд', description: '', price: 1600, priceAlt: '160 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Коньяк' },
+
+  // Водка
+  { id: 190, name: 'Русский стандарт', description: '', price: 1000, priceAlt: '100 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Водка' },
+  { id: 191, name: 'Сибирский экспресс', description: '', price: 1300, priceAlt: '130 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Водка' },
+  { id: 192, name: 'Мороша', description: '', price: 800, priceAlt: '80 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Водка' },
+  { id: 193, name: 'Пять озёр', description: '', price: 800, priceAlt: '80 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Водка' },
+  { id: 194, name: 'Хаски', description: '', price: 800, priceAlt: '80 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Водка' },
+  { id: 195, name: 'Хаски Ягодный микс', description: '', price: 800, priceAlt: '80 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Водка' },
+  { id: 196, name: 'Хорта', description: '', price: 800, priceAlt: '80 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Водка' },
+  { id: 197, name: 'Белая берёзка', description: '', price: 850, priceAlt: '85 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Водка' },
+  { id: 198, name: 'Беленькая', description: '', price: 850, priceAlt: '85 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Водка' },
+  { id: 199, name: 'Талка', description: '', price: 850, priceAlt: '85 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Водка' },
+
+  // Текила
+  { id: 200, name: 'Рио Гранд', description: 'золотая / серебреная', price: 1300, priceAlt: '130 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Текила' },
+
+  // Ром
+  { id: 205, name: 'Барсело Гран Аньехо', description: '', price: 1750, priceAlt: '175 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Ром' },
+  { id: 206, name: 'Бакарди Оакхарт', description: '', price: 1900, priceAlt: '190 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Ром' },
 ];
 
-const CATEGORIES = ['Все', 'Пицца', 'Горячие', 'Закуски', 'Салаты', 'Супы', 'Напитки', 'Десерты', 'Гарниры'];
+const CATEGORIES = [
+  'Все', 'Пицца', 'Горячие', 'Закуски', 'Салаты', 'Супы', 'Гарниры',
+  'Десерты', 'Мороженое', 'Наполнители', 'Коктейли',
+  'Горячие напитки', 'Напитки',
+  'Вина', 'Вина Грузии', 'Пиво', 'Настойки', 'Аперитивы',
+  'Виски', 'Коньяк', 'Водка', 'Текила', 'Ром',
+];
 const PIZZA_SUBCATEGORIES = ['Пицца большая', 'Пицца маленькая'];
 
 const NAV_LINKS = [
@@ -69,6 +198,55 @@ const NAV_LINKS = [
   { label: 'Доставка', href: '#delivery' },
   { label: 'Контакты', href: '#contacts' },
 ];
+
+const MenuCard = ({ item, inCart, i, menuVisible, onAdd, onRemove }: {
+  item: MenuItem;
+  inCart: CartItem | undefined;
+  i: number;
+  menuVisible: boolean;
+  onAdd: () => void;
+  onRemove: () => void;
+}) => (
+  <div
+    className="card-dish rounded-2xl overflow-hidden"
+    style={{ animation: menuVisible ? `fade-up 0.5s ease-out ${i * 0.05}s both` : 'none' }}
+  >
+    <div className="relative bg-gradient-to-br from-white/5 to-white/0 h-36 flex items-center justify-center text-6xl">
+      {item.emoji}
+      {item.badge && (
+        <span className="absolute top-3 right-3 bg-[var(--neon-orange)] text-white text-[10px] font-display tracking-wider px-2 py-0.5 rounded-full">
+          {item.badge}
+        </span>
+      )}
+    </div>
+    <div className="p-4 flex flex-col h-[calc(100%-9rem)]">
+      <div className="font-display text-base font-semibold uppercase tracking-wide mb-1">{item.name}</div>
+      {item.weight && <div className="font-rubik text-[11px] text-white/30 mb-1">{item.weight}</div>}
+      {item.description && <div className="font-rubik text-xs text-white/40 mb-3 leading-relaxed">{item.description}</div>}
+      <div className="flex items-center justify-between mt-auto">
+        <div>
+          <span className="font-display text-lg font-bold text-[var(--neon-orange)]">{item.price} ₽</span>
+          {item.priceAlt && <div className="font-rubik text-[11px] text-white/30">{item.priceAlt}</div>}
+        </div>
+        {inCart ? (
+          <div className="flex items-center gap-2">
+            <button onClick={onRemove} className="w-7 h-7 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors">
+              <Icon name="Minus" size={12} />
+            </button>
+            <span className="font-display text-sm w-4 text-center">{inCart.quantity}</span>
+            <button onClick={onAdd} className="w-7 h-7 rounded-full bg-[var(--neon-orange)] flex items-center justify-center hover:bg-[var(--neon-orange)]/80 transition-colors">
+              <Icon name="Plus" size={12} />
+            </button>
+          </div>
+        ) : (
+          <button onClick={onAdd} className="w-8 h-8 rounded-full btn-neon flex items-center justify-center">
+            <Icon name="Plus" size={14} />
+          </button>
+        )}
+      </div>
+    </div>
+  </div>
+);
 
 const Index = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
@@ -261,42 +439,7 @@ const Index = () => {
                     {subItems.map((item, i) => {
                       const inCart = cart.find(c => c.id === item.id);
                       return (
-                        <div
-                          key={item.id}
-                          className="card-dish rounded-2xl overflow-hidden"
-                          style={{ animation: menuVisible ? `fade-up 0.5s ease-out ${i * 0.05}s both` : 'none' }}
-                        >
-                          <div className="relative bg-gradient-to-br from-white/5 to-white/0 h-36 flex items-center justify-center text-6xl">
-                            {item.emoji}
-                            {item.badge && (
-                              <span className="absolute top-3 right-3 bg-[var(--neon-orange)] text-white text-[10px] font-display tracking-wider px-2 py-0.5 rounded-full">
-                                {item.badge}
-                              </span>
-                            )}
-                          </div>
-                          <div className="p-4">
-                            <div className="font-display text-base font-semibold uppercase tracking-wide mb-1">{item.name}</div>
-                            <div className="font-rubik text-xs text-white/40 mb-4 leading-relaxed">{item.description}</div>
-                            <div className="flex items-center justify-between">
-                              <span className="font-display text-lg font-bold text-[var(--neon-orange)]">{item.price} ₽</span>
-                              {inCart ? (
-                                <div className="flex items-center gap-2">
-                                  <button onClick={() => removeFromCart(item.id)} className="w-7 h-7 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors">
-                                    <Icon name="Minus" size={12} />
-                                  </button>
-                                  <span className="font-display text-sm w-4 text-center">{inCart.quantity}</span>
-                                  <button onClick={() => addToCart(item)} className="w-7 h-7 rounded-full bg-[var(--neon-orange)] flex items-center justify-center hover:bg-[var(--neon-orange)]/80 transition-colors">
-                                    <Icon name="Plus" size={12} />
-                                  </button>
-                                </div>
-                              ) : (
-                                <button onClick={() => addToCart(item)} className="w-8 h-8 rounded-full btn-neon flex items-center justify-center">
-                                  <Icon name="Plus" size={14} />
-                                </button>
-                              )}
-                            </div>
-                          </div>
-                        </div>
+                        <MenuCard key={item.id} item={item} inCart={inCart} i={i} menuVisible={menuVisible} onAdd={() => addToCart(item)} onRemove={() => removeFromCart(item.id)} />
                       );
                     })}
                   </div>
@@ -308,51 +451,7 @@ const Index = () => {
             {filteredMenu.map((item, i) => {
               const inCart = cart.find(c => c.id === item.id);
               return (
-                <div
-                  key={item.id}
-                  className="card-dish rounded-2xl overflow-hidden"
-                  style={{ animation: menuVisible ? `fade-up 0.5s ease-out ${i * 0.05}s both` : 'none' }}
-                >
-                  <div className="relative bg-gradient-to-br from-white/5 to-white/0 h-36 flex items-center justify-center text-6xl">
-                    {item.emoji}
-                    {item.badge && (
-                      <span className="absolute top-3 right-3 bg-[var(--neon-orange)] text-white text-[10px] font-display tracking-wider px-2 py-0.5 rounded-full">
-                        {item.badge}
-                      </span>
-                    )}
-                  </div>
-                  <div className="p-4">
-                    <div className="font-display text-base font-semibold uppercase tracking-wide mb-1">{item.name}</div>
-                    <div className="font-rubik text-xs text-white/40 mb-4 leading-relaxed">{item.description}</div>
-                    <div className="flex items-center justify-between">
-                      <span className="font-display text-lg font-bold text-[var(--neon-orange)]">{item.price} ₽</span>
-                      {inCart ? (
-                        <div className="flex items-center gap-2">
-                          <button
-                            onClick={() => removeFromCart(item.id)}
-                            className="w-7 h-7 rounded-full glass flex items-center justify-center hover:bg-white/10 transition-colors"
-                          >
-                            <Icon name="Minus" size={12} />
-                          </button>
-                          <span className="font-display text-sm w-4 text-center">{inCart.quantity}</span>
-                          <button
-                            onClick={() => addToCart(item)}
-                            className="w-7 h-7 rounded-full bg-[var(--neon-orange)] flex items-center justify-center hover:bg-[var(--neon-orange)]/80 transition-colors"
-                          >
-                            <Icon name="Plus" size={12} />
-                          </button>
-                        </div>
-                      ) : (
-                        <button
-                          onClick={() => addToCart(item)}
-                          className="w-8 h-8 rounded-full btn-neon flex items-center justify-center"
-                        >
-                          <Icon name="Plus" size={14} />
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                </div>
+                <MenuCard key={item.id} item={item} inCart={inCart} i={i} menuVisible={menuVisible} onAdd={() => addToCart(item)} onRemove={() => removeFromCart(item.id)} />
               );
             })}
           </div>
