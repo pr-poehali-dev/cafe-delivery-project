@@ -145,15 +145,6 @@ const MENU: MenuItem[] = [
   { id: 397, name: 'Зубатка жареная', description: '', price: 270, weight: '200 г', emoji: '🐟', category: 'Морепродукты' },
   { id: 398, name: 'Окунь морской жареный', description: '', price: 470, weight: '1 шт./40/7 г', emoji: '🐟', category: 'Морепродукты' },
 
-  // Соусы
-  { id: 400, name: 'По-грузински', description: '', price: 50, weight: '50 г', emoji: '🫙', category: 'Соусы' },
-  { id: 401, name: 'Хрен', description: '', price: 50, weight: '50 г', emoji: '🫙', category: 'Соусы' },
-  { id: 402, name: 'Розовый', description: '', price: 50, weight: '50 г', emoji: '🫙', category: 'Соусы' },
-  { id: 403, name: 'Сырный', description: '', price: 50, weight: '50 г', emoji: '🫙', category: 'Соусы' },
-  { id: 404, name: 'Тартар', description: '', price: 50, weight: '50 г', emoji: '🫙', category: 'Соусы' },
-  { id: 405, name: 'Кетчуп', description: '', price: 50, weight: '50 г', emoji: '🍅', category: 'Соусы' },
-  { id: 406, name: 'Сметана', description: '', price: 80, weight: '100 г', emoji: '🥛', category: 'Соусы' },
-
   // Гарниры
   { id: 15, name: 'Картофель фри', description: '', price: 100, weight: '100 г', emoji: '🍟', category: 'Гарниры' },
   { id: 410, name: 'Сложный гарнир из овощей', description: 'кукуруза, горошек, помидоры, огурцы, маслины, картофель фри, салат из капусты, фасоль, перец болгарский зелень', price: 270, weight: '270 г', emoji: '🥗', category: 'Гарниры' },
@@ -291,7 +282,7 @@ const CATEGORIES = [
   'Все', 'Пицца',
   'Горячие закуски', 'Холодные закуски', 'Салаты', 'Супы',
   'Горячие блюда', 'Морепродукты',
-  'Соусы', 'Гарниры',
+  'Гарниры',
   'Десерты', 'Мороженое', 'Наполнители', 'Коктейли',
   'Горячие напитки', 'Напитки',
   'Вина', 'Вина Грузии', 'Пиво', 'Настойки', 'Аперитивы',
