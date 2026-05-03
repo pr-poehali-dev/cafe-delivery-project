@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Icon from '@/components/ui/icon';
 
-const HERO_IMAGE = 'https://cdn.poehali.dev/projects/065d3492-188e-4a88-aec6-8f5d0527832f/files/fa12a1db-fe44-4b90-8d2b-37665014ace2.jpg';
+const HERO_IMAGE = 'https://cdn.poehali.dev/projects/065d3492-188e-4a88-aec6-8f5d0527832f/bucket/c0e86d09-f919-4ad3-ad85-3ce81ad33b56.jpg';
 
 interface MenuItem {
   id: number;
