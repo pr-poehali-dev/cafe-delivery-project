@@ -213,69 +213,51 @@ const MENU: MenuItem[] = [
   { id: 120, name: 'Липецкая минеральная вода', description: '', price: 60, weight: '0,5 л', emoji: '💧', category: 'Напитки' },
   { id: 121, name: 'Бонаква', description: '', price: 100, weight: '0,5 л', emoji: '💧', category: 'Напитки' },
 
-  // Вина
-  { id: 130, name: 'Шампанское Абрау-Дюрсо', description: 'брют п/сл', price: 800, weight: '0,75 л', emoji: '🥂', category: 'Вина' },
-  { id: 131, name: 'Шампанское МКШВ', description: 'п/сл', price: 650, weight: '0,75 л', emoji: '🥂', category: 'Вина' },
-  { id: 132, name: 'Мускат', description: '', price: 800, priceAlt: '60 ₽ / бокал', weight: '0,75/0,05 л', emoji: '🍷', category: 'Вина' },
-  { id: 133, name: 'Гранде Momento', description: 'красное сухое и п/сл / белое сухое и п/сл (Россия)', price: 800, weight: '0,75 л', emoji: '🍷', category: 'Вина' },
-  { id: 134, name: 'Джой Тинто', description: 'красное сухое (Аргентина)', price: 1550, priceAlt: '75 ₽ / бокал', weight: '1,125/0,05 л', emoji: '🍷', category: 'Вина' },
-  { id: 135, name: 'Джой', description: 'белое сухое (Аргентина)', price: 1550, priceAlt: '75 ₽ / бокал', weight: '1,125/0,05 л', emoji: '🍷', category: 'Вина' },
-  { id: 136, name: 'Кастилья', description: 'белое сухое и п/сл / красное сухое и п/сл', price: 1350, priceAlt: '50 ₽ / бокал', weight: '1,5/0,05 л', emoji: '🍷', category: 'Вина' },
-
-  // Вина Грузии
-  { id: 140, name: 'Киндзмараули', description: 'красное п/сл', price: 1000, priceAlt: '70 ₽ / бокал', weight: '0,75/0,05 л', emoji: '🍷', category: 'Вина Грузии' },
-  { id: 141, name: 'Цинандали', description: 'белое сухое', price: 900, priceAlt: '60 ₽ / бокал', weight: '0,75/0,05 л', emoji: '🍷', category: 'Вина Грузии' },
-  { id: 142, name: 'Алазанская долина', description: 'красное п/сл и белое п/сл', price: 900, priceAlt: '60 ₽ / бокал', weight: '0,75/0,05 л', emoji: '🍷', category: 'Вина Грузии' },
-
-  // Пиво
-  { id: 150, name: 'Монастырское', description: 'светлое фильтрованное', price: 110, priceAlt: '150 ₽ / 0,5 л', weight: '0,33/0,5 л', emoji: '🍺', category: 'Пиво' },
-  { id: 151, name: 'Балтика 7', description: 'светлое фильтрованное', price: 100, priceAlt: '150 ₽ / 0,5 л', weight: '0,33/0,5 л', emoji: '🍺', category: 'Пиво' },
-  { id: 152, name: 'Стефанбланш', description: 'пшеничное н/ф', price: 110, priceAlt: '160 ₽ / 0,5 л', weight: '0,33/0,5 л', emoji: '🍺', category: 'Пиво' },
-  { id: 153, name: 'Крон Бланш Бир', description: 'пшеничное н/ф', price: 110, priceAlt: '170 ₽ / 0,5 л', weight: '0,33/0,5 л', emoji: '🍺', category: 'Пиво' },
-  { id: 154, name: 'Пилзнер Премиум', description: 'светлое фильтрованное', price: 110, priceAlt: '150 ₽ / 0,5 л', weight: '0,33/0,5 л', emoji: '🍺', category: 'Пиво' },
-  { id: 155, name: 'Балтика Портер', description: 'тёмное фильтрованное', price: 120, priceAlt: '170 ₽ / 0,5 л', weight: '0,33/0,5 л', emoji: '🍺', category: 'Пиво' },
-  { id: 156, name: 'Черри Найт', description: 'вишнёвое', price: 140, priceAlt: '190 ₽ / 0,5 л', weight: '0,33/0,5 л', emoji: '🍺', category: 'Пиво' },
-
-  // Фирменные настойки
-  { id: 160, name: 'Фирменные настойки в ассортименте', description: 'уточняйте на баре', price: 1500, priceAlt: '150 ₽ / 0,05 л', weight: '0,5/0,05 л', emoji: '🍶', category: 'Настойки' },
-
-  // Аперитивы
-  { id: 165, name: 'Мартини Бьянко', description: '', price: 3000, priceAlt: '150 ₽ / бокал', weight: '1 л/0,05 л', emoji: '🍸', category: 'Аперитивы' },
-  { id: 166, name: 'Мартини Драй', description: '', price: 3000, priceAlt: '150 ₽ / бокал', weight: '1 л/0,05 л', emoji: '🍸', category: 'Аперитивы' },
-  { id: 167, name: 'Мартини Россо', description: '', price: 3000, priceAlt: '150 ₽ / бокал', weight: '1 л/0,05 л', emoji: '🍸', category: 'Аперитивы' },
-
-  // Виски
-  { id: 170, name: 'Джемесон', description: '', price: 2700, priceAlt: '270 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Виски' },
-  { id: 171, name: 'Рэд Лэйбл', description: '', price: 1800, priceAlt: '180 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Виски' },
-  { id: 172, name: 'Баллантайнс', description: '', price: 2200, priceAlt: '220 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Виски' },
-  { id: 173, name: 'Джим Бим', description: '', price: 2200, priceAlt: '220 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Виски' },
-  { id: 174, name: 'Уильям Лоусонс', description: '', price: 1600, priceAlt: '160 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Виски' },
-
-  // Коньяк
-  { id: 180, name: 'Старейшина 7 звёзд', description: '', price: 1600, priceAlt: '160 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Коньяк' },
-  { id: 181, name: 'Коктебель 5 звёзд', description: '', price: 1600, priceAlt: '160 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Коньяк' },
-  { id: 182, name: 'Арарат 3 звезды', description: '', price: 1800, priceAlt: '180 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Коньяк' },
-  { id: 183, name: 'Арарат 5 звёзд', description: '', price: 2200, priceAlt: '220 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Коньяк' },
-  { id: 184, name: 'Великая династия 5 звёзд', description: '', price: 1600, priceAlt: '160 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Коньяк' },
-
-  // Водка
-  { id: 190, name: 'Русский стандарт', description: '', price: 1000, priceAlt: '100 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Водка' },
-  { id: 191, name: 'Сибирский экспресс', description: '', price: 1300, priceAlt: '130 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Водка' },
-  { id: 192, name: 'Мороша', description: '', price: 800, priceAlt: '80 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Водка' },
-  { id: 193, name: 'Пять озёр', description: '', price: 800, priceAlt: '80 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Водка' },
-  { id: 194, name: 'Хаски', description: '', price: 800, priceAlt: '80 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Водка' },
-  { id: 195, name: 'Хаски Ягодный микс', description: '', price: 800, priceAlt: '80 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Водка' },
-  { id: 196, name: 'Хорта', description: '', price: 800, priceAlt: '80 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Водка' },
-  { id: 197, name: 'Белая берёзка', description: '', price: 850, priceAlt: '85 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Водка' },
-  { id: 198, name: 'Беленькая', description: '', price: 850, priceAlt: '85 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Водка' },
-  { id: 199, name: 'Талка', description: '', price: 850, priceAlt: '85 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Водка' },
-
-  // Текила
-  { id: 200, name: 'Рио Гранд', description: 'золотая / серебреная', price: 1300, priceAlt: '130 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Текила' },
-
-  // Ром
-  { id: 205, name: 'Барсело Гран Аньехо', description: '', price: 1750, priceAlt: '175 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Ром' },
-  { id: 206, name: 'Бакарди Оакхарт', description: '', price: 1900, priceAlt: '190 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Ром' },
+  // Алкогольные напитки
+  { id: 130, name: 'Шампанское Абрау-Дюрсо', description: 'брют п/сл', price: 800, weight: '0,75 л', emoji: '🥂', category: 'Алкогольные напитки' },
+  { id: 131, name: 'Шампанское МКШВ', description: 'п/сл', price: 650, weight: '0,75 л', emoji: '🥂', category: 'Алкогольные напитки' },
+  { id: 132, name: 'Мускат', description: '', price: 800, priceAlt: '60 ₽ / бокал', weight: '0,75/0,05 л', emoji: '🍷', category: 'Алкогольные напитки' },
+  { id: 133, name: 'Гранде Momento', description: 'красное сухое и п/сл / белое сухое и п/сл (Россия)', price: 800, weight: '0,75 л', emoji: '🍷', category: 'Алкогольные напитки' },
+  { id: 134, name: 'Джой Тинто', description: 'красное сухое (Аргентина)', price: 1550, priceAlt: '75 ₽ / бокал', weight: '1,125/0,05 л', emoji: '🍷', category: 'Алкогольные напитки' },
+  { id: 135, name: 'Джой', description: 'белое сухое (Аргентина)', price: 1550, priceAlt: '75 ₽ / бокал', weight: '1,125/0,05 л', emoji: '🍷', category: 'Алкогольные напитки' },
+  { id: 136, name: 'Кастилья', description: 'белое сухое и п/сл / красное сухое и п/сл', price: 1350, priceAlt: '50 ₽ / бокал', weight: '1,5/0,05 л', emoji: '🍷', category: 'Алкогольные напитки' },
+  { id: 140, name: 'Киндзмараули', description: 'красное п/сл', price: 1000, priceAlt: '70 ₽ / бокал', weight: '0,75/0,05 л', emoji: '🍷', category: 'Алкогольные напитки' },
+  { id: 141, name: 'Цинандали', description: 'белое сухое', price: 900, priceAlt: '60 ₽ / бокал', weight: '0,75/0,05 л', emoji: '🍷', category: 'Алкогольные напитки' },
+  { id: 142, name: 'Алазанская долина', description: 'красное п/сл и белое п/сл', price: 900, priceAlt: '60 ₽ / бокал', weight: '0,75/0,05 л', emoji: '🍷', category: 'Алкогольные напитки' },
+  { id: 150, name: 'Монастырское', description: 'светлое фильтрованное', price: 110, priceAlt: '150 ₽ / 0,5 л', weight: '0,33/0,5 л', emoji: '🍺', category: 'Алкогольные напитки' },
+  { id: 151, name: 'Балтика 7', description: 'светлое фильтрованное', price: 100, priceAlt: '150 ₽ / 0,5 л', weight: '0,33/0,5 л', emoji: '🍺', category: 'Алкогольные напитки' },
+  { id: 152, name: 'Стефанбланш', description: 'пшеничное н/ф', price: 110, priceAlt: '160 ₽ / 0,5 л', weight: '0,33/0,5 л', emoji: '🍺', category: 'Алкогольные напитки' },
+  { id: 153, name: 'Крон Бланш Бир', description: 'пшеничное н/ф', price: 110, priceAlt: '170 ₽ / 0,5 л', weight: '0,33/0,5 л', emoji: '🍺', category: 'Алкогольные напитки' },
+  { id: 154, name: 'Пилзнер Премиум', description: 'светлое фильтрованное', price: 110, priceAlt: '150 ₽ / 0,5 л', weight: '0,33/0,5 л', emoji: '🍺', category: 'Алкогольные напитки' },
+  { id: 155, name: 'Балтика Портер', description: 'тёмное фильтрованное', price: 120, priceAlt: '170 ₽ / 0,5 л', weight: '0,33/0,5 л', emoji: '🍺', category: 'Алкогольные напитки' },
+  { id: 156, name: 'Черри Найт', description: 'вишнёвое', price: 140, priceAlt: '190 ₽ / 0,5 л', weight: '0,33/0,5 л', emoji: '🍺', category: 'Алкогольные напитки' },
+  { id: 160, name: 'Фирменные настойки в ассортименте', description: 'уточняйте на баре', price: 1500, priceAlt: '150 ₽ / 0,05 л', weight: '0,5/0,05 л', emoji: '🍶', category: 'Алкогольные напитки' },
+  { id: 165, name: 'Мартини Бьянко', description: '', price: 3000, priceAlt: '150 ₽ / бокал', weight: '1 л/0,05 л', emoji: '🍸', category: 'Алкогольные напитки' },
+  { id: 166, name: 'Мартини Драй', description: '', price: 3000, priceAlt: '150 ₽ / бокал', weight: '1 л/0,05 л', emoji: '🍸', category: 'Алкогольные напитки' },
+  { id: 167, name: 'Мартини Россо', description: '', price: 3000, priceAlt: '150 ₽ / бокал', weight: '1 л/0,05 л', emoji: '🍸', category: 'Алкогольные напитки' },
+  { id: 170, name: 'Джемесон', description: '', price: 2700, priceAlt: '270 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Алкогольные напитки' },
+  { id: 171, name: 'Рэд Лэйбл', description: '', price: 1800, priceAlt: '180 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Алкогольные напитки' },
+  { id: 172, name: 'Баллантайнс', description: '', price: 2200, priceAlt: '220 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Алкогольные напитки' },
+  { id: 173, name: 'Джим Бим', description: '', price: 2200, priceAlt: '220 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Алкогольные напитки' },
+  { id: 174, name: 'Уильям Лоусонс', description: '', price: 1600, priceAlt: '160 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Алкогольные напитки' },
+  { id: 180, name: 'Старейшина 7 звёзд', description: '', price: 1600, priceAlt: '160 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Алкогольные напитки' },
+  { id: 181, name: 'Коктебель 5 звёзд', description: '', price: 1600, priceAlt: '160 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Алкогольные напитки' },
+  { id: 182, name: 'Арарат 3 звезды', description: '', price: 1800, priceAlt: '180 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Алкогольные напитки' },
+  { id: 183, name: 'Арарат 5 звёзд', description: '', price: 2200, priceAlt: '220 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Алкогольные напитки' },
+  { id: 184, name: 'Великая династия 5 звёзд', description: '', price: 1600, priceAlt: '160 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Алкогольные напитки' },
+  { id: 190, name: 'Русский стандарт', description: '', price: 1000, priceAlt: '100 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Алкогольные напитки' },
+  { id: 191, name: 'Сибирский экспресс', description: '', price: 1300, priceAlt: '130 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Алкогольные напитки' },
+  { id: 192, name: 'Мороша', description: '', price: 800, priceAlt: '80 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Алкогольные напитки' },
+  { id: 193, name: 'Пять озёр', description: '', price: 800, priceAlt: '80 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Алкогольные напитки' },
+  { id: 194, name: 'Хаски', description: '', price: 800, priceAlt: '80 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Алкогольные напитки' },
+  { id: 195, name: 'Хаски Ягодный микс', description: '', price: 800, priceAlt: '80 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Алкогольные напитки' },
+  { id: 196, name: 'Хорта', description: '', price: 800, priceAlt: '80 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Алкогольные напитки' },
+  { id: 197, name: 'Белая берёзка', description: '', price: 850, priceAlt: '85 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Алкогольные напитки' },
+  { id: 198, name: 'Беленькая', description: '', price: 850, priceAlt: '85 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Алкогольные напитки' },
+  { id: 199, name: 'Талка', description: '', price: 850, priceAlt: '85 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🍾', category: 'Алкогольные напитки' },
+  { id: 200, name: 'Рио Гранд', description: 'золотая / серебреная', price: 1300, priceAlt: '130 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Алкогольные напитки' },
+  { id: 205, name: 'Барсело Гран Аньехо', description: '', price: 1750, priceAlt: '175 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Алкогольные напитки' },
+  { id: 206, name: 'Бакарди Оакхарт', description: '', price: 1900, priceAlt: '190 ₽ / рюмка', weight: '0,5/0,05 л', emoji: '🥃', category: 'Алкогольные напитки' },
 ];
 
 const CATEGORIES = [
@@ -285,8 +267,7 @@ const CATEGORIES = [
   'Гарниры',
   'Десерты', 'Мороженое', 'Наполнители', 'Коктейли',
   'Горячие напитки', 'Напитки',
-  'Вина', 'Вина Грузии', 'Пиво', 'Настойки', 'Аперитивы',
-  'Виски', 'Коньяк', 'Водка', 'Текила', 'Ром',
+  'Алкогольные напитки',
 ];
 const PIZZA_SUBCATEGORIES = ['Пицца большая', 'Пицца маленькая'];
 
