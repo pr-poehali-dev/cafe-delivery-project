@@ -456,7 +456,7 @@ const Index = () => {
         <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-[var(--neon-orange)]/5 blur-3xl" />
         <div className="absolute bottom-1/3 left-1/4 w-64 h-64 rounded-full bg-[var(--neon-pink)]/5 blur-3xl" />
 
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
+        <div className="relative z-10 text-center max-w-4xl mx-auto px-6" style={{ marginBottom: '7cm' }}>
           <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-8 text-sm font-rubik text-white/70">
             <span className="w-2 h-2 rounded-full bg-[var(--neon-orange)] animate-pulse" />
             Открыто до 23:00 • Доставка от 30 минут
