@@ -450,8 +450,8 @@ const Index = () => {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${HERO_IMAGE})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-cafe-dark/70 via-cafe-dark/50 to-cafe-dark" />
-        <div className="absolute inset-0 bg-gradient-to-r from-cafe-dark/80 via-transparent to-cafe-dark/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-cafe-dark/20 via-cafe-dark/10 to-cafe-dark/20" />
+        <div className="absolute inset-0 bg-black/20" />
 
         <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-[var(--neon-orange)]/5 blur-3xl" />
         <div className="absolute bottom-1/3 left-1/4 w-64 h-64 rounded-full bg-[var(--neon-pink)]/5 blur-3xl" />
