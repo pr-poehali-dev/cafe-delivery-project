@@ -363,7 +363,7 @@ const Index = () => {
         <div className="relative z-10 text-center max-w-4xl mx-auto px-6" style={{ marginBottom: '14cm' }}>
           <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-2 mb-8 text-sm font-rubik text-white/70">
             <span className="w-2 h-2 rounded-full bg-[var(--neon-orange)] animate-pulse" />
-            Открыто до 23:00 • Доставка от 30 минут
+            Открыто до 23:00
           </div>
 
           <h1 className="font-display text-5xl md:text-7xl font-bold uppercase leading-tight mb-4">
@@ -379,9 +379,6 @@ const Index = () => {
             <a href="#menu" className="btn-neon px-8 py-4 rounded-full text-base font-display tracking-wider uppercase">
               Смотреть меню
             </a>
-            <a href="#delivery" className="glass px-8 py-4 rounded-full text-base font-display tracking-wider uppercase hover:border-[var(--neon-orange)]/40 transition-all duration-300">
-              Условия доставки
-            </a>
           </div>
         </div>
 
@@ -393,10 +390,9 @@ const Index = () => {
 
       {/* STATS BAR */}
       <section className="py-8 border-y border-white/5">
-        <div className="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-3 gap-8">
           {[
             { value: '50+', label: 'Блюд в меню', icon: 'UtensilsCrossed' },
-            { value: '30 мин', label: 'Время доставки', icon: 'Clock' },
             { value: '4.9 ★', label: 'Рейтинг', icon: 'Star' },
             { value: '1000+', label: 'Довольных гостей', icon: 'Users' },
           ].map((stat) => (
