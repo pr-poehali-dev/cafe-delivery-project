@@ -414,7 +414,7 @@ const Index = () => {
         <div className="max-w-6xl mx-auto">
           <div className="mb-12">
             <span className="font-display text-sm tracking-widest text-[var(--neon-orange)] uppercase">Наше меню</span>
-            <h2 className="font-display text-5xl font-bold uppercase mt-2">Что приготовить<br /><span className="text-gradient">для вас?</span></h2>
+            <h2 className="font-display text-5xl font-bold uppercase mt-2">Что хотите<br /><span className="text-gradient">попробовать?</span></h2>
           </div>
 
           <div className="flex flex-wrap gap-2 mb-10">
