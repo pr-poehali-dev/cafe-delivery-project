@@ -433,10 +433,11 @@ const Index = () => {
             ))}
           </div>
 
-          {activeCategory === 'Пицца' ? (
+          {['Все', 'Пицца', 'Пицца большая', 'Пицца маленькая'].includes(activeCategory) ? (
             PIZZA_SUBCATEGORIES.map(sub => {
               const subItems = filteredMenu.filter(item => item.category === sub);
-              const label = sub === 'Пицца большая' ? 'Большая' : 'Маленькая';
+              if (subItems.length === 0) return null;
+              const label = sub === 'Пицца большая' ? 'Пицца большая' : 'Пицца маленькая';
               return (
                 <div key={sub} className="mb-10">
                   <div className="flex items-center gap-4 mb-6">
@@ -444,22 +445,19 @@ const Index = () => {
                     <div className="flex-1 h-px bg-white/10" />
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    {subItems.map((item, i) => {
-                      const inCart = cart.find(c => c.id === item.id);
-                      return (
-                        <MenuCard key={item.id} item={item} inCart={inCart} i={i} menuVisible={menuVisible} onAdd={() => addToCart(item)} onRemove={() => removeFromCart(item.id)} />
-                      );
-                    })}
+                    {subItems.map((item, i) => (
+                      <MenuCard key={item.id} item={item} i={i} menuVisible={menuVisible} />
+                    ))}
                   </div>
                 </div>
               );
             })
           ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {filteredMenu.map((item, i) => (
-              <MenuCard key={item.id} item={item} i={i} menuVisible={menuVisible} />
-            ))}
-          </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {filteredMenu.map((item, i) => (
+                <MenuCard key={item.id} item={item} i={i} menuVisible={menuVisible} />
+              ))}
+            </div>
           )}
         </div>
       </section>
