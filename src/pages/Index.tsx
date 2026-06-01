@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Icon from '@/components/ui/icon';
+import { QRCodeSVG } from 'qrcode.react';
 
 const HERO_IMAGE = 'https://cdn.poehali.dev/projects/065d3492-188e-4a88-aec6-8f5d0527832f/bucket/c0e86d09-f919-4ad3-ad85-3ce81ad33b56.jpg';
 
@@ -496,27 +497,22 @@ const Index = () => {
               ))}
             </div>
 
-            <div className="glass rounded-2xl p-6">
-              <div className="font-display text-xl uppercase font-bold mb-6">Задать вопрос</div>
-              <div className="space-y-4">
-                <input
-                  type="text"
-                  placeholder="Ваше имя"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 font-rubik text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-[var(--neon-orange)]/50 transition-colors"
+            <div className="glass rounded-2xl p-6 flex flex-col items-center justify-center gap-6">
+              <div className="text-center">
+                <div className="font-display text-xl uppercase font-bold mb-1">Наш сайт</div>
+                <div className="font-rubik text-sm text-white/40">Отсканируй QR-код чтобы открыть меню</div>
+              </div>
+              <div className="p-4 bg-white rounded-2xl">
+                <QRCodeSVG
+                  value={typeof window !== 'undefined' ? window.location.origin : '/'}
+                  size={180}
+                  bgColor="#ffffff"
+                  fgColor="#0a0602"
+                  level="M"
                 />
-                <input
-                  type="tel"
-                  placeholder="Телефон"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 font-rubik text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-[var(--neon-orange)]/50 transition-colors"
-                />
-                <textarea
-                  placeholder="Сообщение"
-                  rows={4}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 font-rubik text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-[var(--neon-orange)]/50 transition-colors resize-none"
-                />
-                <button className="w-full btn-neon py-3 rounded-xl font-display text-sm tracking-widest uppercase">
-                  Отправить
-                </button>
+              </div>
+              <div className="font-rubik text-xs text-white/30 text-center">
+                Наведи камеру телефона на код
               </div>
             </div>
           </div>
